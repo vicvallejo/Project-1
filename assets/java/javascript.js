@@ -55,8 +55,7 @@ $("#search-btn").click(function () {
       $("#word-text").text(input);
   getWord();
   getSong();
-  getLyricsApi();
-    
+     
   } else {
     window.alert("Please enter a valid input")
   }
@@ -209,6 +208,7 @@ function getSong() {
         $("#play-i")[0].className = "fas fa-play-circle";
         isPlaying = false;
       }
+        getLyricsApi();
     });
 
     // This gets the name of the song to uppercase
