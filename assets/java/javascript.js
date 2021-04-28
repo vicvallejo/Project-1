@@ -167,6 +167,9 @@ function getSong() {
     localStorage.setItem("Song", setSong);
     localStorage.setItem("Artist", setArtist);
 
+    
+    getLyricsApi();
+    
     var fetchLyrics = document.getElementById("fetch-button");
 function getLyricsApi() {
 //get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
