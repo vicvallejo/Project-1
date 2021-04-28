@@ -147,8 +147,8 @@ function getSong() {
 
   // This sets the URL for the ajax call
   var queryURL =
-    "https://api.spotify.com/v1/search?q=" + word + "&type=track&market=us";
-
+   // "https://api.spotify.com/v1/search?q=" + word + "&type=track&market=us";
+      "https://api.spotify.com/v1/search?q=airplane&type=track&market=us";
   // This gets the data from the SPOTIFY API
   $.ajax({
     url: queryURL,
