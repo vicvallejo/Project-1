@@ -135,7 +135,7 @@ function getLyricsApi() {
 
 
   // fetch request gets Lyrics for Artist + Song requested
-  var requestUrl = `https://api.lyrics.ovh/v1/` + word4;
+  var requestUrl = `https://api.lyrics.ovh/v1/Mac Miller/Weekend (feat. Miguel)`;
   
   console.log(requestUrl);
 
