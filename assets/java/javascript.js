@@ -55,6 +55,7 @@ $("#search-btn").click(function () {
       $("#word-text").text(input);
   getWord();
   getSong();
+  getLyricsApi();
     
   } else {
     window.alert("Please enter a valid input")
