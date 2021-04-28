@@ -1,0 +1,147 @@
+
+.word{
+    display: flex;
+    justify-content: center;
+}
+
+#audio{
+    float: right;
+    margin-right: -10px;
+    font-size: 20px;
+}
+
+header{
+    margin-bottom: -40px;
+}
+
+.date{
+    float: right;
+}
+
+.button-play{
+    font-size: 35px;
+}
+
+#search-engine{
+    padding:  0px 70px 0px 70px;
+}
+
+
+
+#song-cover{
+    background:transparent url(images/ajaxload.gif) center no-repeat;
+    height: 200px;
+    width: 200px;
+    display:block;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#play-i{
+    font-size: 60px;
+    margin-top: 45px;
+}
+
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+    background: linear-gradient(-45deg, #8eda63, #3cb5c5);
+    box-shadow: black;
+    padding: 25px;
+    height: 500px;
+    width: 350px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: -20%;
+}
+
+.title{
+    margin: 0px 0px 30px 25px;
+    font-size: 35px;
+    font-weight: lighter;
+    font-family: 'Zen Dots', cursive;
+    color: #312c7a;
+}
+
+
+#song{
+    background: linear-gradient(to top, #ffffff, #000000);
+}
+
+#search-engine{
+    background: linear-gradient(to right, #312c7a, #3c93c5);
+}
+
+.word-section{
+    background: linear-gradient(45deg, #cc3cad, #3cc5ae);
+}
+
+.definition-section{
+    height: 60%;
+    width: 60%;
+}
+
+.fa-arrow-left{
+    float: left;
+    margin: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-chevron-circle-down{
+    margin-top: 50px;
+    color: rgb(46, 45, 45);
+}
+
+.fa-bookmark{
+    float: left;
+    position: absolute;
+    z-index: 1;
+}
+
+#saved-btn{
+    margin: 20px;
+    font-size: 20px;
+
+}
+
+.li-el{
+    margin: 20px;
+    background-color: rgb(224, 224, 224);
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    border: solid 1px rgb(199, 199, 199);
+}
+
+.starred{
+    background: linear-gradient(45deg, #eaff74, #ff56da);
+}
+
+.fixed{
+    position: fixed;
+    top: 5px;
+    left: 15px;
+}
+
+button{
+    outline:none;
+}
+
+.search {
+    height: 130px;
+    width: 70%;
+}
+
+
+
+#word-input {
+    width: 92%;
+    margin-right: 15px;
+}
