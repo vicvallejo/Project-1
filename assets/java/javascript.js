@@ -253,10 +253,11 @@ var getWord = function () {
   localStorage.getItem("random def");
 
   var apiUrl =
-    "https://lingua-robot.p.rapidapi.com/language/v1/entries/en/"
-     +
-    localStorage.getItem("word");
+    "https://lingua-robot.p.rapidapi.com/language/v1/entries/en/word"
+   //  +
+   // localStorage.getItem("word");
   console.log(apiUrl);
+  
 
   fetch(apiUrl, {
     method: "GET",
