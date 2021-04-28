@@ -1,3 +1,7 @@
+var setSong;
+var setArtist;
+
+
 // This gets the random word, sets the starred section and runs the timer for the spotify token
 // window.onload = getRandomApi(), restoreData(), getToken();
 window.onload = restoreData(), getToken();
@@ -118,8 +122,8 @@ $("#current-date").text(moment().format("LL"));
 var fetchLyrics = document.getElementById("fetch-button");
 function getLyricsApi() {
 //get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
-  var getLocalSong = localStorage.getItem("Song");
-  var getLocalArtist = localStorage.getItem("Artist");
+  var getLocalSong = setSong;
+  var getLocalArtist = setArtist;
   console.log(getLocalSong);
   console.log(getLocalArtist);
 
