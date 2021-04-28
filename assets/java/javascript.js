@@ -119,37 +119,7 @@ $("#current-date").text(moment().format("LL"));
 
 
 
-var fetchLyrics = document.getElementById("fetch-button");
-function getLyricsApi() {
-//get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
-  
- var getLocalSong = localStorage.getItem("Song");
- var getLocalArtist = localStorage.getItem("Artist");
-//  console.log(getLocalSong);
-//  console.log(getLocalArtist);
 
-  // fetch request gets Lyrics for Artist + Song requested
- // var requestUrl = `https://api.lyrics.ovh/v1/${getLocalArtist}/${getLocalSong}`;
-
-  var word4 = getLocalArtist + "/" + getLocalSong ;
-
-
-  // fetch request gets Lyrics for Artist + Song requested
-  var requestUrl = `https://api.lyrics.ovh/v1/Mac Miller/Weekend (feat. Miguel)`;
-  
-  console.log(requestUrl);
-
-  fetch(requestUrl) // --when you get the response to this function
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      var lyrics = document.getElementById("lyrics");
-      lyrics.innerHTML = data.lyrics;
-      console.log(lyrics);
-    });
-}
 
 // fetchLyrics.addEventListener("click", getLyricsApi);
 
@@ -197,6 +167,46 @@ function getSong() {
     localStorage.setItem("Song", setSong);
     localStorage.setItem("Artist", setArtist);
 
+    var fetchLyrics = document.getElementById("fetch-button");
+function getLyricsApi() {
+//get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
+  
+//getLocalSong = localStorage.getItem("Song");
+//getLocalArtist = localStorage.getItem("Artist");
+//  console.log(getLocalSong);
+//  console.log(getLocalArtist);
+
+  // fetch request gets Lyrics for Artist + Song requested
+ // var requestUrl = `https://api.lyrics.ovh/v1/${getLocalArtist}/${getLocalSong}`;
+
+  var word4 = setArtist + "/" + setSong ;
+
+
+  // fetch request gets Lyrics for Artist + Song requested
+  var requestUrl = `https://api.lyrics.ovh/v1/` + word4;
+  
+  console.log(requestUrl);
+
+  fetch(requestUrl) // --when you get the response to this function
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var lyrics = document.getElementById("lyrics");
+      lyrics.innerHTML = data.lyrics;
+      console.log(lyrics);
+    });
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     var play;
@@ -215,8 +225,7 @@ function getSong() {
         $("#play-i")[0].className = "fas fa-play-circle";
         isPlaying = false;
       }
-        getLyricsApi();
-    });
+        });
 
     // This gets the name of the song to uppercase
     var namesplit = response.tracks.items[0].name.toUpperCase().split(" ");
