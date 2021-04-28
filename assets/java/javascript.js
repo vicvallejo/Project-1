@@ -143,7 +143,7 @@ function getLyricsApi() {
 // This is the SPOTIFY API section
 function getSong() {
   // This gets the random word from local storage
-  var word3 = localStorage.getItem("word") + "&type=track&market=us";
+  var word3 = input + "&type=track&market=us";
   
   
 
