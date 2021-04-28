@@ -122,13 +122,15 @@ $("#current-date").text(moment().format("LL"));
 var fetchLyrics = document.getElementById("fetch-button");
 function getLyricsApi() {
 //get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
-  var getLocalSong = setSong;
-  var getLocalArtist = setArtist;
-  console.log(getLocalSong);
-  console.log(getLocalArtist);
+ // var getLocalSong = setSong;
+//  var getLocalArtist = setArtist;
+  var word4 = setArtist + "/" + setSong;
+
 
   // fetch request gets Lyrics for Artist + Song requested
-  var requestUrl = `https://api.lyrics.ovh/v1/${getLocalArtist}/${getLocalSong}`;
+  var requestUrl = `https://api.lyrics.ovh/v1/` + word4;
+  
+  console.log(requestUrl);
 
   fetch(requestUrl) // --when you get the response to this function
     .then(function (response) {
