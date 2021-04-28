@@ -6,28 +6,27 @@ window.onload = restoreData(), getToken();
 function getToken() {
   $.ajax({
     type: "POST",
-    url: "https://accounts.spotify.com/api/token",        
+    url: "https://accounts.spotify.com/api/token",
     headers: {
-      Authorization: 
-      "Basic " + 
-      "ZmQzMTk5MmQ5Zjk0NGFmZjlkMTEyYzI2MjEwMjRmZGM6ZTFlOTZjYzI2NGY2NDkzMmFkODIxNzM2OGE2OWQxYzA="},       
-      data: "grant_type=client_credentials",
-      
-    success:function(response)
-    {
+      Authorization:
+        "Basic " +
+        "ZmQzMTk5MmQ5Zjk0NGFmZjlkMTEyYzI2MjEwMjRmZGM6ZTFlOTZjYzI2NGY2NDkzMmFkODIxNzM2OGE2OWQxYzA="
+    },
+    data: "grant_type=client_credentials",
+
+    success: function (response) {
       newToken = response.access_token
       localStorage.setItem("new token", newToken);
       console.log("refresh token");
     },
-    error : function()
-    {
+    error: function () {
       console.log("Something went wrong refreshing the token");
-    }   
+    }
   });
 }
 
 
-setInterval(function(){ getToken(); }, 3600000);
+setInterval(function () { getToken(); }, 3600000);
 
 
 
@@ -43,19 +42,19 @@ var input;
 $("#search-btn").click(function () {
   if ($("#word-input").val() !== "") {
     $("#definition-section").show();
-  $("#search-engine").hide();
-  input = $("#word-input").val()
-  localStorage.setItem("word", input)
-  var random = document.getElementById("random");
-      random.innerHTML = input;
-      $("#word-text").text(input);
-  getWord();
-  getSong();
-    
+    $("#search-engine").hide();
+    input = $("#word-input").val()
+   localStorage.setItem("word", input)
+    var random = document.getElementById("random");
+    random.innerHTML = input;
+    $("#word-text").text(input);
+    getWord();
+    getSong();
+
   } else {
     window.alert("Please enter a valid input")
   }
-  
+
 });
 
 $("#audio").click(function () {
@@ -74,7 +73,7 @@ $(".fa-arrow-left").click(function () {
   $("header").show();
   $("#lyrics").hide();
   $("#starred-section").hide();
-  
+
 });
 
 $(".fa-chevron-circle-down").click(function () {
@@ -106,7 +105,7 @@ $("#current-date").text(moment().format("LL"));
 //       var word2 = data;
 
 //       localStorage.setItem("random word", word2);
- 
+
 //       getWord();
 //       getSong();
 //     });
@@ -117,7 +116,7 @@ $("#current-date").text(moment().format("LL"));
 
 var fetchLyrics = document.getElementById("fetch-button");
 function getLyricsApi() {
-//get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
+  //get Song and Artist from LocalStorage and set them to variables to be inputs for the Lyrics API
   var getLocalSong = localStorage.getItem("Song");
   var getLocalArtist = localStorage.getItem("Artist");
   console.log(getLocalSong);
@@ -171,16 +170,16 @@ function getSong() {
     $("#song-cover")[0].attributes[1].nodeValue =
       response.tracks.items[0].album.images[0].url;
     //Set Song and Artist elements in local storage to be fetch by the lyrics API
-    var setSong = response.tracks.items[0].name; 
+    var setSong = response.tracks.items[0].name;
     var setArtist = response.tracks.items[0].artists[0].name;
-    
+
     console.log(setSong);
     console.log(setArtist);
 
     localStorage.setItem("Song", setSong);
     localStorage.setItem("Artist", setArtist);
 
-    
+
 
     var play;
 
@@ -242,7 +241,7 @@ function getSong() {
     } else {
       // console.log("si tiene track");
     }
-});
+  });
 }
 
 
@@ -252,10 +251,12 @@ var getWord = function () {
   localStorage.getItem("word");
   localStorage.getItem("random def");
 
+  var word2 = localStorage.getItem("word");
+
   var apiUrl =
     "https://lingua-robot.p.rapidapi.com/language/v1/entries/en/"
-     +
-    localStorage.getItem("word");
+    + word2;
+   
   console.log(apiUrl);
 
   fetch(apiUrl, {
@@ -267,7 +268,7 @@ var getWord = function () {
   })
     .then((response) => response.json())
     .then((data) => {
-     
+
       var worddef = data.entries[0].lexemes[0].senses[0].definition;
       var wordtyp = data.entries[0].lexemes[0].partOfSpeech;
       var wordpron = new Audio(data.entries[0].pronunciations[1].audio.url);
@@ -278,21 +279,21 @@ var getWord = function () {
       console.log(data);
       console.log(wordpron);
       localStorage.setItem("pronunciation", wordpron);
-      
-var play;
-    // This plays the pronunciation 
-    $("#pronunciation").click(function () {
-     
-      console.log(wordpron);
-      // Play
-      if (isPlaying == false) {
-        play = wordpron.play();
-        isPlaying = true;
-      } else if (isPlaying == true) {
-        wordpron.pause();
-        isPlaying = false;
-      }
-    });
+
+      var play;
+      // This plays the pronunciation 
+      $("#pronunciation").click(function () {
+
+        console.log(wordpron);
+        // Play
+        if (isPlaying == false) {
+          play = wordpron.play();
+          isPlaying = true;
+        } else if (isPlaying == true) {
+          wordpron.pause();
+          isPlaying = false;
+        }
+      });
 
     });
 };
@@ -310,7 +311,7 @@ $("#save-btn").click(function () {
     $("#no-starred").remove()
     isSaved = true;
     localStorage.setItem("starred", $("#saved-words-list")[0].innerHTML);
-  
+
   } else if (isSaved == true) {
     localStorage.removeItem("starred"[0]);
     $("#save-btn")[0].className = "far fa-bookmark";
@@ -331,5 +332,5 @@ function restoreData() {
     $("#saved-words-list")[0].innerHTML = saved;
   }
 }
-    
+
 
