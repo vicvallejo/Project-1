@@ -45,7 +45,7 @@ $("#search-btn").click(function () {
     $("#definition-section").show();
   $("#search-engine").hide();
   input = $("#word-input").val()
-  localStorage.setItem("word", input)
+ // localStorage.setItem("word", input)
   var random = document.getElementById("random");
       random.innerHTML = input;
       $("#word-text").text(input);
@@ -253,7 +253,7 @@ var getWord = function () {
   localStorage.getItem("random def");
 
   var apiUrl =
-    "https://lingua-robot.p.rapidapi.com/language/v1/entries/en/word"
+    "https://lingua-robot.p.rapidapi.com/language/v1/entries/en/" + input
    //  +
    // localStorage.getItem("word");
   console.log(apiUrl);
