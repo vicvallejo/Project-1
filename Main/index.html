@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word of the Day</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Zen+Dots&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+
+<main>
+  <!-- this is the HEADER section -->
+  <header>
+    <div class="relative overflow-hidden bg-white">
+        <div class="mx-auto">
+          <div class="relative z-10 pb-8 bg-white ">
+            
+            <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
+              <nav class="relative flex justify-between items-top sm:h-10 " aria-label="Global">
+                <div class="flex items-top">
+                  <div class="flex justify-between w-full items-top md:w-auto">
+                    <p>
+                      <span class="sr-only">Workflow</span>
+                      <img class="w-auto h-8 sm:h-10" src="">
+                      <h1 class="title">Word of the Day</h1>
+                    </p>
+                  </div>
+                </div>
+                <div class="date">
+                    <p id="current-date" class="font-medium text-gray-500">la fecha de hoy</p>
+                </div>
+              </nav>
+            </div>
+  </header>
+
+  <!-- This is the DEFINITION section -->
+  <section id="definition-section">
+    <button id="search-again"><i class="fixed fas fa-arrow-left"></i></button>
+    <div class="word-section flex items-center justify-center min-h-screen px-5 py-5  min-w-screen">
+      <button id="saved-btn" ><i class="fas fa-save"></i></button>
+      <div class="definition-section relative p-10  overflow-hidden text-gray-800 bg-gray-100 shadow-lg rounded-xl min-w-80" >
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-800" id="random">...</h2>
+          <p id="typeword"class="mt-2 text-gray-600">...</p>
+          <p id="definition" class="mt-2 text-gray-600">...</p>
+          <button><i id="save-btn" class="far fa-bookmark"></i></i></button>
+        </div>
+        <div class="flex justify-end mt-4">
+          <button id= "pronunciation" class="text-xl font-medium text-blue-500"><i class="fas fa-volume-up"></i></button>       
+        </div>
+      </div>
+      <!-- This is the SONG button -->
+      <button id="audio" class="px-4 py-2 font-bold text-blue  rounded hover:bg-gray-400 ">
+        <i class="fas fa-headphones-alt"></i>
+      </button>
+      
+    </div>
+  </section>
+  
+  <!-- This is the SONG CARD section -->
+  <section id="song">
+    <button><i class="fas fa-arrow-left"></i></button>
+    <div class="flex items-center justify-center min-h-screen px-5 py-5  min-w-screen">
+      <div class="content " >
+        <img
+        id="song-cover"
+        src="http://placekitten.com/200/300"
+      
+        width="200"
+        height="200"
+        class="w-20 h-20 bg-gray-100 rounded-lg "
+      />
+      <div class="min-w-0 flex-auto space-y-0.5">
+        <p
+          class="text-sm font-semibold uppercase text-lime-600 sm:text-base lg:text-sm xl:text-base"
+        ></p>
+        <h2
+          id="Song-name"
+          class="text-base font-semibold text-black truncate sm:text-xl lg:text-base xl:text-xl"
+        >
+          Oops...
+        </h2>
+        <p
+          id="artist"
+          class="text-base font-medium text-gray-500 sm:text-lg lg:text-base xl:text-lg"
+        >
+        song not found
+        </p>
+        <button  id="play" type="button" class="object-center mx-auto button-play ">
+            <i id="play-i"class="fas fa-play-circle"></i>
+        </button> 
+  </div>
+  <a href="#lyrics"><i class="fas fa-chevron-circle-down"></i></a>
+ 
+</section>
+
+<!-- This is the LYRICS section -->
+<section id="lyrics" class="word">
+  <figure class="max-w-md p-8 px-8 py-4 my-20 bg-gray-100 rounded-lg rounded-xl">
+      <div class="pt-6 space-y-4 text-center">
+        <blockquote>
+          <p class="text-lg font-semibold">
+            “gbyrtbgiufndfiuybfindbyufghinjbh
+            viuifnefvnufepwuvnfuve
+            feiwbhvbebbefhjbjdbhjdbhv”
+          </p>
+        </blockquote>
+        <figcaption class="font-medium">
+          <div class="text-gray-500">
+           - lyrics
+          </div>
+        </figcaption>
+      </div>
+  </figure>
+</section>
+
+
+
+<!-- This is the SEARCH ENGINE section -->
+<section id="search-engine" >
+  <div class=" flex items-center justify-center min-h-screen px-5 py-5  min-w-screen">
+    <div class="search relative p-10  overflow-hidden text-gray-800 bg-gray-100 shadow-lg rounded-xl " >
+        <div class="relative mt-1">
+            <input type="text" id="word-input" class="w-full py-2 pl-3 pr-10 transition-colors border-2 border-gray-200 rounded-xl hover:border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Search...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+          </div>
+        <div class="absolute top-0 left-0 flex w-full h-2">
+            <div class="flex-1 h-2 bg-pink-500"></div>
+            <div class="flex-1 h-2 bg-purple-500"></div>
+            <div class="flex-1 h-2 bg-blue-500"></div>
+            <div class="flex-1 h-2 bg-pink-500"></div>
+            <div class="flex-1 h-2 bg-green-500"></div>
+            <div class="flex-1 h-2 bg-purple-500"></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- This is the STARRED section -->
+
+<section id="starred-section">
+  <button><i class="fixed fas fa-arrow-left"></i></button>
+  <div class="starred word-section flex items-center justify-center min-h-screen px-5 py-5  min-w-screen">
+    <div class="relative p-10  overflow-hidden text-gray-800 bg-gray-100 shadow-lg rounded-xl min-w-80" >
+      <ul id="saved-words-list">
+        <li id="no-starred">Save some words to see them displayed here :)</li>
+      </ul>
+  </div>
+</section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="./assets/java/javascript.js"></script>
+    
+  </body>
+</html>
