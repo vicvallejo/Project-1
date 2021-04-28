@@ -143,12 +143,14 @@ function getLyricsApi() {
 // This is the SPOTIFY API section
 function getSong() {
   // This gets the random word from local storage
-  var word = localStorage.getItem("word");
+  var word3 = localStorage.getItem("word");
 
   // This sets the URL for the ajax call
   var queryURL =
-   // "https://api.spotify.com/v1/search?q=" + word + "&type=track&market=us";
-      "https://api.spotify.com/v1/search?q=airplane&type=track&market=us";
+    "https://api.spotify.com/v1/search?q="
+  + word3
+  + "&type=track&market=us";
+  
   // This gets the data from the SPOTIFY API
   $.ajax({
     url: queryURL,
